@@ -5109,7 +5109,8 @@
                   "base-finance",
                   "base-conversationalai",
                   "base-voicemail",
-                  "base-video"
+                  "base-video",
+                  "whisper"
                 ]
               },
               {
@@ -5121,7 +5122,11 @@
             "type": "string",
             "description": "This is the language that will be set for the transcription. The list of languages Deepgram supports can be found here: https://developers.deepgram.com/docs/models-languages-overview",
             "enum": [
+              "ar",
+              "az",
+              "ba",
               "bg",
+              "br",
               "ca",
               "cs",
               "da",
@@ -5139,19 +5144,28 @@
               "es-419",
               "es-LATAM",
               "et",
+              "eu",
               "fi",
               "fr",
               "fr-CA",
+              "ha",
+              "haw",
+              "he",
               "hi",
               "hi-Latn",
               "hu",
               "id",
+              "is",
               "it",
               "ja",
+              "jw",
+              "kn",
               "ko",
               "ko-KR",
+              "ln",
               "lt",
               "lv",
+              "mk",
               "ms",
               "multi",
               "nl",
@@ -5163,6 +5177,11 @@
               "ro",
               "ru",
               "sk",
+              "sl",
+              "sn",
+              "so",
+              "sr",
+              "su",
               "sv",
               "sv-SE",
               "ta",
@@ -5170,8 +5189,11 @@
               "th",
               "th-TH",
               "tr",
+              "tt",
               "uk",
+              "ur",
               "vi",
+              "yo",
               "zh",
               "zh-CN",
               "zh-HK",
@@ -6328,7 +6350,8 @@
                   "base-finance",
                   "base-conversationalai",
                   "base-voicemail",
-                  "base-video"
+                  "base-video",
+                  "whisper"
                 ]
               },
               {
@@ -6340,7 +6363,11 @@
             "type": "string",
             "description": "This is the language that will be set for the transcription. The list of languages Deepgram supports can be found here: https://developers.deepgram.com/docs/models-languages-overview",
             "enum": [
+              "ar",
+              "az",
+              "ba",
               "bg",
+              "br",
               "ca",
               "cs",
               "da",
@@ -6358,19 +6385,28 @@
               "es-419",
               "es-LATAM",
               "et",
+              "eu",
               "fi",
               "fr",
               "fr-CA",
+              "ha",
+              "haw",
+              "he",
               "hi",
               "hi-Latn",
               "hu",
               "id",
+              "is",
               "it",
               "ja",
+              "jw",
+              "kn",
               "ko",
               "ko-KR",
+              "ln",
               "lt",
               "lv",
+              "mk",
               "ms",
               "multi",
               "nl",
@@ -6382,6 +6418,11 @@
               "ro",
               "ru",
               "sk",
+              "sl",
+              "sn",
+              "so",
+              "sr",
+              "su",
               "sv",
               "sv-SE",
               "ta",
@@ -6389,8 +6430,11 @@
               "th",
               "th-TH",
               "tr",
+              "tt",
               "uk",
+              "ur",
               "vi",
+              "yo",
               "zh",
               "zh-CN",
               "zh-HK",
@@ -7464,7 +7508,7 @@
             "maxLength": 1000
           },
           "value": {
-            "type": "object",
+            "type": "string",
             "description": "This is the value you want to compare against the parameter.",
             "maxLength": 1000
           }
@@ -10314,7 +10358,9 @@
               "gpt-4.1-nano",
               "gpt-4.5-preview",
               "chatgpt-4o-latest",
+              "o3",
               "o3-mini",
+              "o4-mini",
               "o1-preview",
               "o1-preview-2024-09-12",
               "o1-mini",
@@ -10351,7 +10397,9 @@
               "gpt-4.1-nano",
               "gpt-4.5-preview",
               "chatgpt-4o-latest",
+              "o3",
               "o3-mini",
+              "o4-mini",
               "o1-preview",
               "o1-preview-2024-09-12",
               "o1-mini",
@@ -10390,7 +10438,9 @@
                 "gpt-4.1-nano",
                 "gpt-4.5-preview",
                 "chatgpt-4o-latest",
+                "o3",
                 "o3-mini",
+                "o4-mini",
                 "o1-preview",
                 "o1-preview-2024-09-12",
                 "o1-mini",
@@ -11608,6 +11658,12 @@
       "AzureVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -11718,6 +11774,12 @@
       "CartesiaVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -11796,6 +11858,12 @@
       "CustomVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used. Use `custom-voice` for providers that are not natively supported.",
@@ -11836,6 +11904,12 @@
       "DeepgramVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -11949,6 +12023,12 @@
       "ElevenLabsVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12078,6 +12158,12 @@
       "HumeVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12131,6 +12217,12 @@
       "LMNTVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12187,6 +12279,12 @@
       "NeuphonicVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12255,6 +12353,12 @@
       "OpenAIVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12329,6 +12433,12 @@
       "PlayHTVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12493,6 +12603,12 @@
       "RimeAIVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12659,6 +12775,12 @@
       "SmallestAIVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12788,6 +12910,12 @@
       "TavusVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12864,6 +12992,12 @@
       "VapiVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -12965,6 +13099,12 @@
       "FallbackAzureVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13013,6 +13153,12 @@
       "FallbackCartesiaVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13083,6 +13229,12 @@
       "FallbackCustomVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used. Use `custom-voice` for providers that are not natively supported.",
@@ -13115,6 +13267,12 @@
       "FallbackDeepgramVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13220,6 +13378,12 @@
       "FallbackElevenLabsVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13341,6 +13505,12 @@
       "FallbackHumeVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13386,6 +13556,12 @@
       "FallbackLMNTVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13434,6 +13610,12 @@
       "FallbackNeuphonicVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13494,6 +13676,12 @@
       "FallbackOpenAIVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13560,6 +13748,12 @@
       "FallbackPlayHTVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13716,6 +13910,12 @@
       "FallbackRimeAIVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13874,6 +14074,12 @@
       "FallbackSmallestAIVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -13950,6 +14156,12 @@
       "FallbackTavusVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -14018,6 +14230,12 @@
       "FallbackVapiVoice": {
         "type": "object",
         "properties": {
+          "cachingEnabled": {
+            "type": "boolean",
+            "description": "This is the flag to toggle voice caching for the assistant.",
+            "example": true,
+            "default": true
+          },
           "provider": {
             "type": "string",
             "description": "This is the voice provider that will be used.",
@@ -16701,6 +16919,7 @@
               "transcript",
               "tool-calls",
               "tool-calls-result",
+              "tool.completed",
               "transfer-update",
               "user-interrupted",
               "voice-input",
@@ -16736,6 +16955,7 @@
                 "transcript",
                 "tool-calls",
                 "tool-calls-result",
+                "tool.completed",
                 "transfer-update",
                 "user-interrupted",
                 "voice-input",
@@ -17451,6 +17671,7 @@
               "transcript",
               "tool-calls",
               "tool-calls-result",
+              "tool.completed",
               "transfer-update",
               "user-interrupted",
               "voice-input",
@@ -17486,6 +17707,7 @@
                 "transcript",
                 "tool-calls",
                 "tool-calls-result",
+                "tool.completed",
                 "transfer-update",
                 "user-interrupted",
                 "voice-input",
@@ -19917,6 +20139,7 @@
               "transcript",
               "tool-calls",
               "tool-calls-result",
+              "tool.completed",
               "transfer-update",
               "user-interrupted",
               "voice-input",
@@ -19952,6 +20175,7 @@
                 "transcript",
                 "tool-calls",
                 "tool-calls-result",
+                "tool.completed",
                 "transfer-update",
                 "user-interrupted",
                 "voice-input",
@@ -20709,6 +20933,7 @@
               "transcript",
               "tool-calls",
               "tool-calls-result",
+              "tool.completed",
               "transfer-update",
               "user-interrupted",
               "voice-input",
@@ -20744,6 +20969,7 @@
                 "transcript",
                 "tool-calls",
                 "tool-calls-result",
+                "tool.completed",
                 "transfer-update",
                 "user-interrupted",
                 "voice-input",
@@ -35840,6 +36066,10 @@
           "error": {
             "type": "string",
             "description": "This is the error if the tool call was not successful. This is added to the conversation history.\n\nFurther, if this is returned, assistant will speak:\n1. the `message`, if it exists and is of type `request-failed`\n2. a `request-failed` message from `tool.messages`, if it exists\n3. a response generated by the model, if neither exist"
+          },
+          "metadata": {
+            "type": "object",
+            "description": "This is optional metadata for the tool call result to be sent to the client."
           }
         },
         "required": [
@@ -36260,6 +36490,10 @@
           "secondsFromStart": {
             "type": "number",
             "description": "The number of seconds from the start of the conversation."
+          },
+          "metadata": {
+            "type": "object",
+            "description": "The metadata for the tool call result."
           }
         },
         "required": [
